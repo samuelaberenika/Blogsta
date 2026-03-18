@@ -1,19 +1,49 @@
-# The Future in Tech
+# Blogsta 🎙️
 
-<img src="https://raybo.org/tfit-feed/images/artwork.jpg" width="250">
+A single-repo podcast setup — store your episodes, artwork and metadata in one place and automatically generate a valid RSS feed with every push.
 
-The [Future in Tech](https://go.raybo.org/tfit) is a weekly series powered by [LinkedIn Learning](https://www.linkedin.com/learning/) hosted by Senior Staff Instructor [Ray Villalobos](https://www.linkedin.com/in/planetoftheweb).
-
-You can [watch it on LinkedIn](https://go.raybo.org/tfit-episodes) every Thursday at 2pm ET, 11am PT. The goal of this series is to spark conversations, provide practical tips and resources to help developers work, learn, and tackle challenges related to working in the technology industry.
-
-We're talking about Generative AI tools like ChatGPT, Dall-E*2, Hugging Face by talking to some of the leaders delivering the tools, strategies and technologies that make working in technology exciting. We'll discuss how they broke into technology, business strategies, ethical concerns and technical skills.
-
-You have a chance to hear from people who are not just talking about, but building the next generation tools like Open AI and leaders who've worked for and with Fortune 500 companies like Microsoft, Google, LinkedIn,  IBM,  Open AI and more.
+Blogsta keeps everything simple: you write your podcast data in a `feed.yaml` file, and a Python script (`feed.py`) generates `podcast.xml` from it. No CMS, no XML editing, just YAML and Git.
 
 ---
-## More Info
-- [The Future in Tech Page](https://go.raybo.org/tfit)
-- [Episode Guide](https://go.raybo.org/tfit-episodes)
-- [YouTube Playlist](https://go.raybo.org/tfit-youtube)
-- [Podcast Feed - Audio Only](https://go.raybo.org/tfit-feed-audio)
-- [Episode Newsletter](https://go.raybo.org/tfit-newsletter)
+
+## How it works
+
+1. Add your audio files to `audio/` and artwork to `images/`
+2. Update `feed.yaml` with your episode details
+3. Push to `main` — the GitHub Actions workflow runs `feed.py` and outputs a fresh `podcast.xml`
+4. Host via GitHub Pages and point any podcast app at your feed URL
+
+---
+
+## Repo structure
+
+```
+Blogsta/
+├── .github/workflows/   # GitHub Actions workflow
+├── audio/               # Episode audio files
+├── images/              # Episode and podcast artwork
+├── feed.yaml            # Podcast metadata (edit this)
+├── feed.py              # Python script that generates the RSS feed
+├── podcast.xml          # Generated RSS feed (don't edit manually)
+└── README.md
+```
+
+---
+
+## Want to use this in your own repo?
+
+Check out **[Blogsta-Cloner](https://github.com/samuelaberenika/Blogsta-Cloner)** — a reusable GitHub Action built from Blogsta's feed generation logic. Drop it into any repo and get the same YAML-to-RSS pipeline without setting anything up from scratch.
+
+---
+
+## Built with
+
+- Python
+- GitHub Actions
+- YAML (because XML got old fast)
+
+---
+
+## License
+
+MIT
