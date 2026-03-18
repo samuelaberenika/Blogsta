@@ -1,7 +1,7 @@
-title: The Future in Tech World
-subtitle: Powered by LinkedIn Learning
-author: Ray Villalobos
-description: Conversations with leaders building next generation techology tools.
+title: Blogsta
+subtitle: A podcast by Samuel Aberenika
+author: Samuel Aberenika
+description: A podcast about tech, cybersecurity and things I find interesting.
 image: /images/artwork.jpg
 language: en-us
 category: Technology
@@ -38,4 +38,3 @@ item:
     file: /audio/TFIT05.mp3
     duration: 00:00:22
     length: 352,587
-
